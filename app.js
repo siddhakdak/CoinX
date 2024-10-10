@@ -19,7 +19,7 @@ app.use(express.json());  // Parse incoming JSON requests
 connectDB();
 
 // Cron job for fetching data
-cron.schedule('*/10 * * * *', async () => {
+cron.schedule('0 */2 * * *', async () => {
     try {
         const { data } = await axios.get('https://api.coingecko.com/api/v3/coins/markets', {
             params: {
